@@ -59,7 +59,7 @@ MongoDB ObjectIds are 12-byte identifiers consisting of:
 
 ## Requirements
 
-- VS Code 1.102.0 or higher
+- VS Code 1.74.0 or higher
 - No additional dependencies required
 
 ## Installation
