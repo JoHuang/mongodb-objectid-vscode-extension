@@ -3,7 +3,7 @@
   "displayName": "MongoDB ObjectId Parser",
   "description": "Parse MongoDB ObjectIds on hover to show creation time and other details",
   "version": "0.0.1",
-  "publisher": "your-publisher-name",
+  "publisher": "Jo Huang",
   "engines": {
     "vscode": "^1.74.0"
   },
