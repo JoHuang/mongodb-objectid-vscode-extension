@@ -7,7 +7,7 @@ A VS Code extension that parses MongoDB ObjectIds and provides detailed informat
 - **Hover Detection**: Automatically detects 24-character hexadecimal strings that match MongoDB ObjectId format
 - **Creation Time**: Shows when the ObjectId was created in a user-friendly format
 - **Detailed Parsing**: Displays machine ID, process ID, and counter information
-- **Multi-language Support**: Works in JavaScript, TypeScript, JSON, Python, and many other file types
+- **Universal File Support**: Works in ALL file types - source code, configuration files, logs, documentation, and more
 - **Real-time Information**: Instantly shows ObjectId details without needing to manually parse
 
 ### Example
@@ -31,20 +31,17 @@ MongoDB ObjectId: 507f1f77bcf86cd799439011
 
 ## Supported File Types
 
-- JavaScript (.js)
-- TypeScript (.ts)
-- JSON (.json, .jsonc)
-- YAML (.yaml, .yml)
-- Python (.py)
-- Java (.java)
-- C# (.cs)
-- Go (.go)
-- Rust (.rs)
-- PHP (.php)
-- Ruby (.rb)
-- Plain text (.txt)
-- Log files (.log)
-- And more...
+**All file types are supported!** The extension works with any file in VS Code, including:
+
+- Source code files (JavaScript, TypeScript, Python, Java, C#, Go, Rust, PHP, Ruby, etc.)
+- Data files (JSON, YAML, XML, CSV, etc.)
+- Documentation files (Markdown, text files, etc.)
+- Configuration files (.env, .conf, .ini, etc.)
+- Log files and database exports
+- Files without extensions
+- Any other file type where ObjectIds might appear
+
+The extension automatically detects 24-character hexadecimal strings that match the MongoDB ObjectId format, regardless of the file type.
 
 ## MongoDB ObjectId Format
 
