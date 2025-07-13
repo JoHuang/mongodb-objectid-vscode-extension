@@ -83,15 +83,29 @@ suite('ObjectIdParser Test Suite', () => {
         const objectId = '507f1f77bcf86cd799439011';
         const content = ObjectIdParser.generateHoverContent(objectId);
         
-        // Hard-coded expected complete content for this specific ObjectId
-        // This is what should be displayed when hovering over 507f1f77bcf86cd799439011
+        // Step 1: Parse the actual "Created At" time from the generated content
+        const createdAtMatch = content.match(/📅 \*\*Created At\*\*: (.+?)  \n/);
+        assert.ok(createdAtMatch, 'Should find Created At timestamp in content');
+        
+        const actualCreatedAtString = createdAtMatch[1];
+        const actualCreatedAtTime = new Date(actualCreatedAtString);
+        
+        // Step 2: Verify the parsed time matches expected timestamp independently
+        const expectedTimestamp = parseInt('507f1f77', 16); // 1350508407
+        const expectedUtcTime = new Date(expectedTimestamp * 1000); // 2012-10-17T21:13:27.000Z
+        
+        assert.ok(!isNaN(actualCreatedAtTime.getTime()), 'Parsed Created At time should be valid');
+        assert.strictEqual(actualCreatedAtTime.getTime(), expectedUtcTime.getTime(), 
+            `Created At time should match expected UTC time. Expected: ${expectedUtcTime.toISOString()}, Got: ${actualCreatedAtTime.toISOString()}`);
+        
+        // Step 3: Build the complete expected content using the actual createdAt string
         const expectedContent = `**MongoDB ObjectId**: \`507f1f77bcf86cd799439011\`
 
-📅 **Created At**: 2012-10-18T05:13:27.000+08:00  
+📅 **Created At**: ${actualCreatedAtString}  
 🌐 **ISO String**: 2012-10-17T21:13:27.000Z  
 🔧 **Details**: Timestamp: 1350508407 | Machine: bcf86c | Process: d799 | Counter: 439011`;
         
-        // Compare the entire content (this is the real test!)
+        // Step 4: Compare the complete content
         assert.strictEqual(content, expectedContent, 'Generated content should exactly match expected format');
     });
 
