@@ -34,6 +34,12 @@
     "onStartupFinished"
   ],
   "main": "./dist/extension.js",
+  "files": [
+    "dist/extension.js",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "contributes": {},
   "scripts": {
     "vscode:prepublish": "yarn run package",
