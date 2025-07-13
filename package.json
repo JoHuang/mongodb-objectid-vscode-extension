@@ -4,6 +4,15 @@
   "description": "Parse MongoDB ObjectIds on hover to show creation time and other details",
   "version": "0.0.1",
   "publisher": "Jo Huang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoHuang/mongodb-objectid-vscode-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JoHuang/mongodb-objectid-vscode-extension/issues"
+  },
+  "homepage": "https://github.com/JoHuang/mongodb-objectid-vscode-extension#readme",
   "engines": {
     "vscode": "^1.74.0"
   },
