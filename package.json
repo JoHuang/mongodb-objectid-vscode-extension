@@ -3,7 +3,8 @@
   "displayName": "MongoDB ObjectId Parser",
   "description": "Parse MongoDB ObjectIds on hover to show creation time and other details",
   "version": "0.0.1",
-  "publisher": "Jo Huang",
+  "publisher": "johuang",
+  "author": "Jo Huang",
   "license": "MIT",
   "repository": {
     "type": "git",
