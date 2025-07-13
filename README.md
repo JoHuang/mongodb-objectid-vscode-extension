@@ -73,6 +73,13 @@ A test file `test-objectids.md` is included with sample ObjectIds to test the fu
 
 ## Release Notes
 
+### 0.0.2
+
+- **Universal File Support**: Now works with ALL file types, not just specific languages
+- **Fixed Duplicate Hover**: Resolved duplicate content issue in TypeScript files
+- **Optimized Performance**: Improved hover provider registration
+- **Better Documentation**: Updated to accurately reflect universal file support
+
 ### 0.0.1
 
 - Initial release
