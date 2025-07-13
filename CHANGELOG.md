@@ -2,6 +2,17 @@
 
 All notable changes to the "mongodb-objectid-parser" extension will be documented in this file.
 
+## [0.0.5] - 2025-07-14
+
+### Fixed
+- **GitHub Actions Release**: Fixed permissions issue preventing GitHub Release creation
+- **Automated Workflow**: Updated to use modern GitHub Actions for reliable release automation
+
+### Technical Changes
+- Added explicit `contents: write` and `packages: write` permissions to workflow
+- Replaced deprecated `actions/create-release@v1` with `softprops/action-gh-release@v1`
+- Ensures complete end-to-end automation from tag push to marketplace publishing and GitHub release
+
 ## [0.0.4] - 2025-07-14
 
 ### Fixed
