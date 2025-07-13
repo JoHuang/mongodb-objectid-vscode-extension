@@ -93,14 +93,18 @@ export class ObjectIdParser {
       return 'Invalid ObjectId';
     }
 
+    // Format creation time as ISO string with local timezone (correct approach)
+    // First convert to local time, then format as ISO string with timezone offset
+    const localDate = new Date(info.createdAt.getTime() - info.createdAt.getTimezoneOffset() * 60000);
+    const localTime = localDate.toISOString().replace('Z', '') + 
+      (info.createdAt.getTimezoneOffset() > 0 ? '-' : '+') +
+      String(Math.floor(Math.abs(info.createdAt.getTimezoneOffset()) / 60)).padStart(2, '0') + ':' +
+      String(Math.abs(info.createdAt.getTimezoneOffset()) % 60).padStart(2, '0');
+
     return `**MongoDB ObjectId**: \`${objectId}\`
 
-📅 **Created**: ${info.formattedTime}
-⏰ **Timestamp**: ${info.timestamp}
-🖥️ **Machine ID**: ${info.machineId}
-⚙️ **Process ID**: ${info.processId}
-🔢 **Counter**: ${info.counter}
-
-*ObjectId was generated on ${info.createdAt.toDateString()}*`;
+📅 **Created At**: ${localTime}  
+🌐 **ISO String**: ${info.createdAt.toISOString()}  
+🔧 **Details**: Timestamp: ${info.timestamp} | Machine: ${info.machineId} | Process: ${info.processId} | Counter: ${info.counter}`;
   }
 }

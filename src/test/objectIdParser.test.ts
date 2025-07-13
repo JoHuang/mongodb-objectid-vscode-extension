@@ -70,11 +70,29 @@ suite('ObjectIdParser Test Suite', () => {
         
         assert.ok(content.includes('MongoDB ObjectId'));
         assert.ok(content.includes(objectId));
-        assert.ok(content.includes('Created'));
+        assert.ok(content.includes('Created At'));
+        assert.ok(content.includes('ISO String'));
+        assert.ok(content.includes('Details'));
         assert.ok(content.includes('Timestamp'));
-        assert.ok(content.includes('Machine ID'));
-        assert.ok(content.includes('Process ID'));
+        assert.ok(content.includes('Machine'));
+        assert.ok(content.includes('Process'));
         assert.ok(content.includes('Counter'));
+    });
+
+    test('Should generate correct hover content format and values', () => {
+        const objectId = '507f1f77bcf86cd799439011';
+        const content = ObjectIdParser.generateHoverContent(objectId);
+        
+        // Hard-coded expected complete content for this specific ObjectId
+        // This is what should be displayed when hovering over 507f1f77bcf86cd799439011
+        const expectedContent = `**MongoDB ObjectId**: \`507f1f77bcf86cd799439011\`
+
+📅 **Created At**: 2012-10-18T05:13:27.000+08:00  
+🌐 **ISO String**: 2012-10-17T21:13:27.000Z  
+🔧 **Details**: Timestamp: 1350508407 | Machine: bcf86c | Process: d799 | Counter: 439011`;
+        
+        // Compare the entire content (this is the real test!)
+        assert.strictEqual(content, expectedContent, 'Generated content should exactly match expected format');
     });
 
     test('Should handle various ObjectId timestamps', () => {

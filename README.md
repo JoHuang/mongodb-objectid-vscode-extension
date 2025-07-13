@@ -17,13 +17,9 @@ When you hover over a MongoDB ObjectId like `507f1f77bcf86cd799439011`, you'll s
 ```
 MongoDB ObjectId: 507f1f77bcf86cd799439011
 
-📅 Created: Oct 17, 2012, 1:00:39 AM GMT
-⏰ Timestamp: 1350518439
-🖥️ Machine ID: bcf86c
-⚙️ Process ID: d799
-🔢 Counter: 439011
-
-ObjectId was generated on Wed Oct 17 2012
+📅 Created At: 2012-10-17T01:00:07 GMT
+🌐 ISO String: 2012-10-17T01:00:07.000Z
+🔧 Details: Timestamp: 1350508407 | Machine: bcf86c | Process: d799 | Counter: 439011
 ```
 
 ## How to Use
