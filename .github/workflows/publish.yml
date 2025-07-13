@@ -22,8 +22,13 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile
       
+    - name: Setup virtual display for VS Code tests
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        
     - name: Run tests
-      run: yarn test
+      run: xvfb-run -a yarn test
       
     - name: Package extension
       run: yarn run package
