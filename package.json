@@ -2,7 +2,7 @@
   "name": "mongodb-objectid-parser",
   "displayName": "MongoDB ObjectId Parser",
   "description": "Parse MongoDB ObjectIds on hover to show creation time and other details",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "johuang",
   "author": "Jo Huang",
   "license": "MIT",
