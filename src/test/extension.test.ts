@@ -5,6 +5,6 @@ suite('MongoDB ObjectId Parser Extension Test Suite', () => {
 	vscode.window.showInformationMessage('Start MongoDB ObjectId Parser tests.');
 
 	test('Extension should be present', () => {
-		assert.ok(vscode.extensions.getExtension('Jo Huang.mongodb-objectid-parser'));
+		assert.ok(vscode.extensions.getExtension('johuang.mongodb-objectid-parser'));
 	});
 });

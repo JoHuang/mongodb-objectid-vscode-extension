@@ -14,41 +14,12 @@ export function activate(context: vscode.ExtensionContext) {
 	// Register hover provider for all file types that might contain ObjectIds
 	const hoverProvider = new ObjectIdHoverProvider();
 	
-	// Register for common file types that might contain MongoDB ObjectIds
-	const supportedLanguages = [
-		'javascript',
-		'typescript',
-		'json',
-		'jsonc',
-		'yaml',
-		'yml',
-		'python',
-		'java',
-		'csharp',
-		'go',
-		'rust',
-		'php',
-		'ruby',
-		'plaintext',
-		'text',
-		'log'
-	];
-
-	// Register hover provider for each supported language
-	supportedLanguages.forEach(language => {
-		const disposable = vscode.languages.registerHoverProvider(
-			{ language: language },
-			hoverProvider
-		);
-		context.subscriptions.push(disposable);
-	});
-
-	// Also register for all files (*) as a fallback
-	const fallbackDisposable = vscode.languages.registerHoverProvider(
-		{ scheme: 'file', pattern: '**/*' },
+	// Register for all files - ObjectIds can appear anywhere!
+	const disposable = vscode.languages.registerHoverProvider(
+		{ scheme: 'file' },  // All files, regardless of language
 		hoverProvider
 	);
-	context.subscriptions.push(fallbackDisposable);
+	context.subscriptions.push(disposable);
 }
 
 // This method is called when your extension is deactivated
