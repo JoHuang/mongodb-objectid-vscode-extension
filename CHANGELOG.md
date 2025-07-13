@@ -2,6 +2,18 @@
 
 All notable changes to the "mongodb-objectid-parser" extension will be documented in this file.
 
+## [0.0.4] - 2025-07-14
+
+### Fixed
+- **GitHub Actions CI/CD**: Fixed virtual display issue for VS Code tests in Linux CI environment
+- **Timezone-Independent Tests**: Improved test validation to work correctly across all timezones
+- **Test Reliability**: Enhanced test approach with proper content parsing and validation
+
+### Technical Changes
+- Added `xvfb` virtual display support for headless VS Code testing in GitHub Actions
+- Redesigned hover content test to parse actual results and validate independently
+- Ensures consistent test results in local development and CI environments
+
 ## [0.0.3] - 2025-07-14
 
 ### Added
