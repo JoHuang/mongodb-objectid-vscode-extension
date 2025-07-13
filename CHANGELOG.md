@@ -2,8 +2,11 @@
 
 All notable changes to the "mongodb-objectid-parser" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## [0.0.1] - 2025-07-14
 
-## [Unreleased]
-
+### Added
 - Initial release
+- MongoDB ObjectId hover provider
+- Parse and display creation timestamp in user-friendly format
+- Support for multiple file types (JavaScript, TypeScript, JSON, Python, etc.)
+- Real-time ObjectId parsing with detailed information

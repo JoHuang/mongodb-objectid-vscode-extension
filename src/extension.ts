@@ -49,13 +49,6 @@ export function activate(context: vscode.ExtensionContext) {
 		hoverProvider
 	);
 	context.subscriptions.push(fallbackDisposable);
-
-	// Keep the original command for demonstration
-	const commandDisposable = vscode.commands.registerCommand('mongodb-objectid-parser.helloWorld', () => {
-		vscode.window.showInformationMessage('MongoDB ObjectId Parser is ready! Hover over any 24-character hex string to see ObjectId details.');
-	});
-
-	context.subscriptions.push(commandDisposable);
 }
 
 // This method is called when your extension is deactivated
