@@ -4,13 +4,14 @@ A VS Code extension that parses MongoDB ObjectIds and provides detailed informat
 
 ## Features
 
-- **Hover Detection**: Automatically detects 24-character hexadecimal strings that match MongoDB ObjectId format
+- **ObjectId Parsing**: Automatically detects 24-character hexadecimal strings that match MongoDB ObjectId format
+- **Timestamp to ObjectId**: Converts timestamps and date strings to their corresponding ObjectIds
 - **Creation Time**: Shows when the ObjectId was created in a user-friendly format
 - **Detailed Parsing**: Displays machine ID, process ID, and counter information
 - **Universal File Support**: Works in ALL file types - source code, configuration files, logs, documentation, and more
 - **Real-time Information**: Instantly shows ObjectId details without needing to manually parse
 
-### Example
+### ObjectId Parsing Example
 
 When you hover over a MongoDB ObjectId like `507f1f77bcf86cd799439011`, you'll see:
 
@@ -22,12 +23,44 @@ MongoDB ObjectId: 507f1f77bcf86cd799439011
 🔧 Details: Timestamp: 1350508407 | Machine: bcf86c | Process: d799 | Counter: 439011
 ```
 
+### Timestamp to ObjectId Example
+
+When you hover over a timestamp like `1672531200` or date string like `"2023-01-01"`, you'll see:
+
+```
+Timestamp to ObjectId: 1672531200
+
+📅 Date/Time: 2023-01-01T00:00:00 UTC
+🆔 Generated ObjectId: 63a8a900000000000000000
+🔧 Details: Timestamp: 1672531200 | Machine: 000000 | Process: 0000 | Counter: 000000
+
+Note: Machine ID, Process ID, and Counter are filled with zeros for timestamp-based generation.
+```
+
 ## How to Use
 
-1. Install the extension
-2. Open any file containing MongoDB ObjectIds
-3. Hover over any 24-character hexadecimal string
-4. View the detailed ObjectId information in the tooltip
+### ObjectId Parsing
+1. Open any file containing MongoDB ObjectIds
+2. Hover over any 24-character hexadecimal string
+3. View the detailed ObjectId information in the tooltip
+
+### Timestamp to ObjectId Generation
+1. Add timestamps (10 or 13 digits) or date strings to your file
+2. Hover over Unix timestamps (e.g., `1672531200`)
+3. Hover over JavaScript timestamps (e.g., `1672531200000`)
+4. Hover over date strings (e.g., `"2023-01-01"`, `"2023-01-01T10:30:00Z"`)
+5. View the generated ObjectId and its details
+
+### Supported Timestamp Formats
+- **Unix timestamps**: 10-digit numbers (seconds since epoch)
+- **JavaScript timestamps**: 13-digit numbers (milliseconds since epoch)
+- **Underscore-separated numbers**: Any numeric format with underscores (e.g., `1752_4657_977_06`)
+- **ISO 8601 date strings**: Standard ISO formats only
+  - Date only: `"2023-01-01"`
+  - Date with time: `"2023-01-01T10:30:00"`
+  - Date with time and milliseconds: `"2023-01-01T10:30:00.123"`
+  - Date with UTC timezone: `"2023-01-01T10:30:00Z"`
+  - Date with timezone offset: `"2023-01-01T10:30:00+08:00"`, `"2023-01-01T10:30:00-05:00"`
 
 ## Supported File Types
 

@@ -2,6 +2,37 @@
 
 All notable changes to the "mongodb-objectid-parser" extension will be documented in this file.
 
+## [0.1.0] - 2025-07-14
+
+### Added
+- **🆕 Timestamp to ObjectId Generation**: New reverse functionality to generate ObjectIds from timestamps and dates
+- **📅 Multiple Timestamp Formats**: Support for Unix timestamps (10 digits), JavaScript timestamps (13 digits), and date strings
+- **🌍 Timezone Offset Support**: Full support for ISO date strings with timezone offsets (e.g., "+08:00", "-05:00")
+- **🔢 Underscore-Separated Numbers**: Support for numeric formats with underscores (e.g., `1752_4657_977_06`)
+- **🔄 Bi-directional Parsing**: Can now both parse ObjectIds to show timestamps AND generate ObjectIds from timestamps
+- **📝 Enhanced Documentation**: Updated README and test files with examples for the new functionality
+
+### Technical Changes
+- Added `TimestampParser` class for reverse ObjectId generation
+- Enhanced `HoverProvider` to detect and handle timestamps, date strings, and timezone offsets
+- Comprehensive test suite with 28+ test cases covering all timestamp parsing scenarios
+- Updated hover content to clearly distinguish between ObjectId parsing and timestamp generation
+
+### Supported Timestamp Formats
+- Unix timestamps: 10-digit numbers (e.g., `1672531200`)
+- JavaScript timestamps: 13-digit numbers (e.g., `1672531200000`)
+- Underscore-separated numbers: Any numeric format with underscores (e.g., `1752_4657_977_06`)
+- **ISO 8601 date strings only**: Standard ISO formats for maximum reliability
+  - Date only: `"2023-01-01"`
+  - Date with time: `"2023-01-01T10:30:00"`
+  - Date with time and milliseconds: `"2023-01-01T10:30:00.123"`
+  - Date with UTC timezone: `"2023-01-01T10:30:00Z"`
+  - Date with timezone offset: `"2023-01-01T10:30:00+08:00"`, `"2023-01-01T10:30:00-05:00"`
+
+### Important Note
+- **Date format restriction**: Only ISO 8601 formats are supported for date strings to ensure cross-platform compatibility and reliability
+- **Non-ISO formats rejected**: MM/DD/YYYY, DD.MM.YYYY, month names, and other locale-specific formats are not supported
+
 ## [0.0.5] - 2025-07-14
 
 ### Fixed
