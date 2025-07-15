@@ -2,6 +2,18 @@
 
 All notable changes to the "mongodb-objectid-parser" extension will be documented in this file.
 
+## [0.1.1] - 2025-07-15
+
+### Added
+- **📸 Demo GIFs**: Added visual demonstration GIFs to README
+  - `mongoIdToTime.gif`: Shows ObjectId parsing functionality 
+  - `timeToMongoId.gif`: Shows timestamp to ObjectId conversion
+- **📦 Package Updates**: Included demo GIFs in extension package for VS Code Marketplace
+
+### Improved
+- **📚 Documentation**: Enhanced README with visual examples of extension functionality
+- **🎨 User Experience**: Better showcase of features through animated demonstrations
+
 ## [0.1.0] - 2025-07-14
 
 ### Added
