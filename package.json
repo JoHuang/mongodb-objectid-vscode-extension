@@ -38,7 +38,9 @@
     "dist/extension.js",
     "README.md",
     "CHANGELOG.md",
-    "LICENSE"
+    "LICENSE",
+    "docs/mongoIdToTime.gif",
+    "docs/timeToMongoId.gif"
   ],
   "contributes": {},
   "scripts": {

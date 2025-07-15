@@ -23,6 +23,8 @@ MongoDB ObjectId: 507f1f77bcf86cd799439011
 🔧 Details: Timestamp: 1350508407 | Machine: bcf86c | Process: d799 | Counter: 439011
 ```
 
+![ObjectId to Time Demo](docs/mongoIdToTime.gif)
+
 ### Timestamp to ObjectId Example
 
 When you hover over a timestamp like `1672531200` or date string like `"2023-01-01"`, you'll see:
@@ -36,6 +38,8 @@ Timestamp to ObjectId: 1672531200
 
 Note: Machine ID, Process ID, and Counter are filled with zeros for timestamp-based generation.
 ```
+
+![Time to ObjectId Demo](docs/timeToMongoId.gif)
 
 ## How to Use
 
